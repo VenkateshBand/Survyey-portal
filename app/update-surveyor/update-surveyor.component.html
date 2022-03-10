@@ -1,0 +1,38 @@
+
+<div class="container">
+    <h2>Update Surveyor</h2>
+
+    <form #addsurveyorform = "ngForm" (ngSubmit)="onSubmit()">
+        
+        <div class="form-group">
+            <label for="username">UserName:</label>
+            <input type="text" class="form-control" required [(ngModel)]="surveyor.username"
+                   name = "username" #username = ngModel placeholder="Enter username" minlength="5" maxlength="10">
+            <div *ngIf="username.invalid && (username.touched || username.dirty)" id="username">username is required!</div>
+            <div *ngIf="username.errors?.['minlength']">Name must be at least 5 charcters long</div>
+            <div *ngIf="username.errors?.['maxlength']">Name can be max 10 characters long.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="firstname">FirstName:</label>
+            <input type="text" class="form-control" required [(ngModel)]="surveyor.firstName" 
+                   name = "firstname" #firstname = ngModel placeholder="Enter firstname"  minlength="5" maxlength="8">
+            <div *ngIf="firstname.invalid && (firstname.touched || firstname.dirty)" id="firstname">firstname is required!</div>
+            <div *ngIf="username.errors?.['minlength']">Name must be at least 5 charcters long</div>
+            <div *ngIf="username.errors?.['maxlength']">Name can be max 8 characters long.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">LastName:</label>
+            <input type="text" class="form-control" required [(ngModel)]="surveyor.lastName" 
+                   name = "lastname" #lastname = ngModel placeholder="Enter lastname"  minlength="5" maxlength="8">
+            <div *ngIf="lastname.invalid && (lastname.touched || lastname.dirty)" id="lastname">lastname is required!</div>
+            <div *ngIf="username.errors?.['minlength']">Name must be at least 5 charcters long</div>
+            <div *ngIf="username.errors?.['maxlength']">Name can be max 8 characters long.</div>
+        </div>
+        
+        <button type="submit" class="btn btn-info" [disabled]="!addsurveyorform.valid">Submit</button>
+        
+    </form>
+</div>
+

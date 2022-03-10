@@ -1,0 +1,51 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card-body">
+     <form (ngSubmit)="onSubmit()" #topicForm="ngForm">
+         
+       <div class="form-group">
+             <label for="title">Topic Name</label>
+             <input type="text" [(ngModel)]="topicsurve.topicName"
+             class="form-control"
+             id="topicName"
+             name="topicName"
+             placeholder="Enter Topicname"
+             required #topicName="ngModel" minlength="5" maxlength="20">
+   
+             <div *ngIf="topicName.invalid && (topicName.touched || topicName.dirty)" id="topicName">topicName is required!</div>
+             <div *ngIf="topicName.errors?.['minlength']">Name must be at least 5 charcters long</div>
+             <div *ngIf="topicName.errors?.['maxlength']">Name can be max 20 characters long.</div>
+   </div>
+   
+   
+                <div class="form-group">
+                <label for="title">Topic Description</label>
+                <input type="text" [(ngModel)]="topicsurve.topicDescription"
+                class="form-control"
+                id="topicDescription"
+                name="topicDescription"
+                placeholder="Enter topicDescription"
+                required #topicDescription="ngModel" minlength="5" maxlength="50">
+      
+                <div *ngIf="topicDescription.invalid && (topicDescription.touched || topicDescription.dirty)" id="topicDescription">topicDescription is required!</div>
+                <div *ngIf="topicDescription.errors?.['minlength']">Name must be at least 5 charcters long</div>
+                <div *ngIf="topicDescription.errors?.['maxlength']">Name can be max 50 characters long.</div>
+     </div>
+   
+   <button type="submit" [disabled]="!topicForm.form.valid"
+      class="btn btn-info">Submit</button>
+   
+   
+   
+   
+     </form>
+   
+   
+   
+    </div>
+   
+   
+   
+   
+   
+   </div>
+   

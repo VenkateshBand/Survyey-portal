@@ -1,0 +1,26 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card-body">
+     <form (ngSubmit)="onSubmit()" #topicForm="ngForm">
+         
+       <div class="form-group">
+             <label for="title">Title</label>
+             <input type="text" [(ngModel)]="topicsurve.topicName"
+             class="form-control"
+             id="topicName"
+             name="topicName">
+             </div>
+
+             <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" [(ngModel)]="topicsurve.topicDescription"
+                class="form-control"
+                id="topicDescription"
+                name="topicDescription"
+                placeholder="Enter topicDescription"
+                required #title="ngModel">
+                </div>
+                <button type="submit" [disabled]="!topicForm.form.valid" 
+                class="btn btn-info">Submit</button>
+                </form>
+                </div>
+                </div>

@@ -1,0 +1,41 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Description</th>
+            <th scope="col">Id</th>
+            <th scope="col">topic Name</th>
+            <th scope="col">topic Description</th>
+            <th scope="col">Published Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Active</th>
+            <th scope="col">Posted Date Time</th>
+            <th scope="col">Review</th>
+            
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let surve of survey">
+            <td>{{ surve.id }}</td>
+            <td>{{ surve.description }}</td>
+            <td>{{surve.topic.id}}</td>
+            <td>{{surve.topic.topicName}}</td>
+            <td>{{surve.topic.topicName}}</td>
+            <td>{{ surve.publishedDateTime }}</td>
+            <td>{{ surve.endDateTime }}</td>
+            <td>{{ surve.active }}</td>
+            <td>{{surve.feedbacks.postedDateTime}}</td>
+            <td>{{surve.feedbacks.review}}</td>
+         
+            <td>
+              <button (click)="updateSurvey(surve.id)" class="btn btn-info">Update</button>
+              <button (click)="deleteSurvey(surve.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+            </td>          
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

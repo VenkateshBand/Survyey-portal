@@ -1,0 +1,29 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">questionText</th>
+            <th scope="col">Answer</th>
+          
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let text of question">
+            <td>{{ text.id }}</td>      
+            <td>{{ text.questionText }}</td>
+            <td>{{text.answer}}</td>
+                
+            <td>
+              <button (click)="updateQuestion(text.id)" class="btn btn-info">Update</button>
+              <button (click)="deleteQuestion(text.id)" class="btn btn-danger">Delete</button>
+            </td>          
+          </tr>       
+        </tbody>
+      </table>
+    </div>
+  
+</div>
+

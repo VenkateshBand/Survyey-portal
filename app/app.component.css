@@ -1,0 +1,160 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.headnav {
+    text-align: center;
+    border: 10px;
+    box-sizing: inherit;
+    background-color:  #17A2B8;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: x-large;
+    
+}
+
+
+.menu-bar
+{
+    background-color:#2ecf19;
+    text-align: center;
+    height: 100px;
+    
+}
+.menu-bar ul
+{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+
+.menu-bar ul li
+{
+    width: 120px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.menu-bar ul li a
+{
+    text-decoration: none;
+    color: #fff;
+    font-family: sans-serif;
+    padding-bottom: 10px;
+    font-size: large;
+}
+
+.active, .menu-bar ul li:hover
+{
+    background:#17A2B8;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-size: large;
+    border-style: outset;
+}
+
+.sub-menu-1
+{
+    display: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1
+{
+    display: block;
+    position: absolute;
+    background: #17A2B8;
+    margin-top: 15px;
+    margin-left: -15px;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul
+{
+    display: block;
+    margin: 10px;
+    border-style: groove ;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li
+{
+    width: 120px;
+    padding: 10px;
+    border-bottom: white;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: large;
+    /* border-style: outset */
+    
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child
+{
+    border-bottom: none;
+}
+
+
+
+#block
+{
+  display: grid;
+  grid-gap: 1.6em;
+  grid-template-areas:
+   "block1 block2"
+   "block3 block4";
+   grid-template-columns: 50% 50%;
+   padding-right: 100px;
+   padding-left: 100px;
+   padding-bottom: 50px;
+    color: rgb(2, 53, 4);
+   transition: 2s;
+   
+  
+}
+#block > div {
+    /* border: 2px solid rgb(2, 122, 50); */
+    border-radius: 10px;
+    border-style: groove;
+    /* border-color: #360409; */
+
+}
+#block > div:first-child {
+    grid-area: block1;
+    height: 120px;
+    background-color: rgb(246, 250, 245);
+   
+    
+
+}
+#block > div:nth-child(2) {
+    grid-area: block2;
+    height: 120px;
+    background-color: rgb(248, 250, 248);
+    
+
+}
+#block > div:nth-child(3) {
+    grid-area: block3;
+    height: 120px;
+    background-color: rgb(245, 250, 244);
+  
+
+}
+#block > div:nth-child(4) {
+    grid-area: block4;
+    height: 120px;
+    background-color: rgb(247, 248, 247);
+   }
+   .box:hover{
+        transform: scale(1.1);
+   }

@@ -1,0 +1,29 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Posted Date</th>
+            <th scope="col">Review</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let text of feedback">
+            <td>{{ text.id }}</td>      
+            <td>{{ text.postedDateTime }}</td>
+            <td>{{ text.review }}</td>  
+            
+            <td>
+              <button (click)="updateFeedback(text.id)" class="btn btn-info">Update</button>
+              <button (click)="deleteFeedback(text.id)" class="btn btn-danger">Delete</button>
+            </td>  
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+</div>
+

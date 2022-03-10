@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Surveyor List</h2>
+    </div><br>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>UserName</th>
+            <th>firstName</th>
+            <th>LastName</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of surveyors"> 
+            <td>{{s.id}}</td>
+            <td>{{s.username}}</td>
+            <td>{{s.firstName}}</td>
+            <td>{{s.lastName}}</td>
+              <td>
+                <button (click)="updateSurveyor(s.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteSurveyor(s.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+              </td> 
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

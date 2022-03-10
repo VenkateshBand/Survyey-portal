@@ -1,0 +1,37 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #feedbackForm="ngForm">
+        
+        
+        <div class="form-group">
+          <label for="price">Published Date</label>
+          <input type="date" [(ngModel)]="feedback.postedDateTime" 
+            class="form-control" 
+            id="date" 
+            name="date" 
+            placeholder="yyyy-MM-dd"
+            value=" "
+            min="2022-02-15"
+            max="2022-02-28"
+            required #postedDateTime="ngModel">
+            <div *ngIf="postedDateTime.invalid && (postedDateTime.touched || postedDateTime.dirty)" id="date">Date is required!</div>
+        </div>
+
+          <div class="form-group">
+            <label for="questionText">Review</label>
+            <input type="text" [(ngModel)]="feedback.review" 
+              class="form-control" 
+              id="review" 
+              name="review" 
+              placeholder="Enter review "
+              required #review="ngModel" minlength="4" maxlength="50">
+              <div *ngIf="review.invalid && (review.touched || review.dirty)" id="review">Review is required!</div>
+            <div *ngIf="review.errors?.['minlength']">Name must be at least 4 charcters long</div>
+            <div *ngIf="review.errors?.['maxlength']">Name can be max 50 characters long.</div>
+          </div>
+          
+        <button type="submit" [disabled]="!feedbackForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #questionForm="ngForm">     
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="number" [(ngModel)]="question.id" 
+          class="form-control" 
+          id="id" 
+          name="id" 
+          placeholder="Enter id"
+          required #title="ngModel">
+      </div>       
+          <div class="form-group">
+            <label for="questionText">QuestionText</label>
+            <input type="text" [(ngModel)]="question.questionText" 
+              class="form-control" 
+              id="questionText" 
+              name="questionText" 
+              placeholder="Enter questionText "
+              required #title="ngModel">
+          </div>      
+        <button type="submit" [disabled]="!questionForm.form.valid" 
+        class="btn btn-info">Submit</button>
+      </form>
+    </div>
+
+</div>
+    

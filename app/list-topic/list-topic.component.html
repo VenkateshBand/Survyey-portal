@@ -1,0 +1,28 @@
+
+<div class="card my-5">
+    <div class="card-body">
+    <table class="table table-bordered table-striped">
+       <thead class="thead-dark">
+           <tr>
+            <th scope="col">id</th>
+            <th scope="col">topic Name</th>
+            <th scope="col">topic Description</th>
+            <th scope="col">Actions</th>
+             </tr>
+            </thead>
+        <tbody>
+            <tr *ngFor="let top of topicsurve">
+                <td>{{top.id}}</td>
+                <td>{{top.topicName}}</td>
+                <td>{{top.topicDescription}}</td>
+            <td>
+                <button (click)="updateTopics(top.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteTopic(top.id)"  class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+    
+            </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    

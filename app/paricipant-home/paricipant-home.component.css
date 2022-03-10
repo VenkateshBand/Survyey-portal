@@ -1,0 +1,72 @@
+#headnav {
+    font-size: xx-large;
+}
+
+#block
+{
+  display: grid;
+  grid-gap: 1.5em;
+  grid-template-areas:
+   "block1 block2"
+   "block3 block4";
+   grid-template-columns: 50% 50%;
+   padding-right: 300px;
+   padding-left: 300px;
+   
+   transition: 2s;
+   border-style: hidden;
+   padding-top: 30px;
+   padding-bottom: 50px;
+   
+  
+}
+#block > div {
+    border-radius: 10px;
+}
+
+#block > div:first-child {
+    grid-area: block1;
+    height: 200px;
+    background-color: rgb(248, 250, 245);
+   
+    
+
+}
+#block > div:nth-child(2) {
+    grid-area: block2;
+    height: 200px;
+    background-color: rgb(248, 250, 248);
+    
+
+}
+#block > div:nth-child(3) {
+    grid-area: block3;
+    height: 200px;
+    background-color: rgb(245, 250, 244);
+  
+
+}
+#block > div:nth-child(4) {
+    grid-area: block4;
+    height: 200px;
+    background-color: rgb(247, 248, 247);
+   }
+
+.box:hover{
+        transform: scale(1.1);
+   }
+
+ .box{
+     text-align: center;
+     font-size: x-large;
+     border-style: groove;
+     color: rgb(21, 21, 219);
+ } 
+ 
+ .btn{
+     padding-top: 10px;
+ }
+
+ #logbtn{
+     font-size: large;
+ }

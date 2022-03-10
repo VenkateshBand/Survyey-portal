@@ -1,0 +1,57 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #surveyForm="ngForm">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" [(ngModel)]="survey.description" 
+            class="form-control" 
+            id="descriprtion" 
+            name="descriprtion" >
+            
+        </div>
+        <!-- <div [hidden]="!title.pristine" class="alert alert-danger">Descriprtion is required</div> -->
+  
+       
+        <div class="form-group">
+            <label for="price">Published Date</label>
+            <input type="date" [(ngModel)]="survey.publishedDateTime" 
+              class="form-control" 
+              id="date" 
+              name="date" 
+             
+              value=" "
+              min="2022-02-15"
+              max="2022-02-28"
+              required >
+            <!-- <div [hidden]="!postedBy.pristine" class="alert alert-danger">Date is required</div> -->
+          </div>
+          <div class="form-group">
+            <label for="price">End Date</label>
+            <input type="date" [(ngModel)]="survey.endDateTime" 
+              class="form-control" 
+              id="date" 
+              name="date" 
+             
+              value=" "
+              min="2022-02-28"
+              max="2022-03-31"
+              required >
+            <!-- <div [hidden]="!postedBy.pristine" class="alert alert-danger">End Date is required</div> -->
+          </div>
+          <div class="form-group">
+            <label for="Active">Active</label>
+            <select type="text" [(ngModel)]="survey.active" 
+              class="form-control" 
+              id="active" 
+              name="active" 
+              required >
+                <option value="true">True</option>
+                <option value="false">False</option>
+              </select>
+            <!-- <div [hidden]="!postedBy.pristine" class="alert alert-danger">Status is required</div> -->
+          </div>
+        <button type="submit" [disabled]="!surveyForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

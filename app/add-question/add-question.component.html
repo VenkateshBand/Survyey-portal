@@ -1,0 +1,50 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #questionForm="ngForm">
+
+     
+      <div class="form-group">
+        <label for="ide">Id</label>
+        <input type="number" [(ngModel)]="question.id" 
+          class="form-control" 
+          id="ide" 
+          name="ide" 
+          placeholder="Enter id"
+          required #id="ngModel" min="1">
+          <div *ngIf="id.invalid && (id.touched || id.dirty)" id="ide">Id is required!</div>
+            <div *ngIf="id.errors?.['minlength']">Number must be Positive</div>
+      </div>
+       
+          <div class="form-group">
+            <label for="questionText">QuestionText</label>
+            <input type="text" [(ngModel)]="question.questionText" 
+              class="form-control" 
+              id="questionText" 
+              name="questionText" 
+              placeholder="Enter questionText "
+              required #questionText="ngModel" minlength="6" maxlength="50">
+              <div *ngIf="questionText.invalid && (questionText.touched || questionText.dirty)" id="questionText">questionText is required!</div>
+            <div *ngIf="questionText.errors?.['minlength']">Name must be at least 6 charcters long</div>
+            <div *ngIf="questionText.errors?.['maxlength']">Name can be max 50 characters long.</div>
+          </div>
+          <div class="form-group">
+            <label for="answer">Answer</label>
+            <input type="text" [(ngModel)]="question.answer" 
+              class="form-control" 
+              id="answer" 
+              name="answer" 
+              placeholder="Enter answer "
+              required #answer="ngModel" minlength="6" maxlength="50">
+              <div *ngIf="answer.invalid && (answer.touched || answer.dirty)" id="answer">answer is required!</div>
+            <div *ngIf="answer.errors?.['minlength']">Name must be at least 6 charcters long</div>
+            <div *ngIf="answer.errors?.['maxlength']">Name can be max 50 characters long.</div>
+          </div>
+        
+       
+        <button type="submit" [disabled]="!questionForm.form.valid" 
+        class="btn btn-info">Submit</button>
+      </form>
+    </div>
+
+</div>
+    
